@@ -8,12 +8,12 @@ const generateShortUrl = (length = 7) => Math.random().toString(36).substr(2, le
 
 linkRouter.post('/', async (req, res, next) => {
   try {
-    if (!req.body.url) {
+    if (!req.body.originalUrl) {
       res.status(400).send({error: 'URL is required'});
     }
     const shortUrl = generateShortUrl();
     const link = new Link({
-      originalUrl: req.body.url,
+      originalUrl: req.body.originalUrl,
       shortUrl
     });
     await link.save();

@@ -1,10 +1,12 @@
+import LinkForm from "../src/features/LinkForm/LinkForm";
 
 const App = () => {
-    return (
-        <>
-            <h1>Privet</h1>
-        </>
-    );
+
+  return (
+    <>
+      <LinkForm />
+    </>
+  );
 };
 
-export default App
+export default App;
